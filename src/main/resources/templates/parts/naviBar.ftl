@@ -17,6 +17,14 @@
             <li class="nav-item">
                 <a class="nav-link disabled" href="#">Редактировать</a>
             </li>
+            <li class="nav-item">
+                <div class="text">
+
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://${serverAddr}:8080/login">Войти</a>
+            </li>
         </ul>
 
     </div>

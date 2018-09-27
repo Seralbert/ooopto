@@ -4,6 +4,8 @@ package ys.project.repos;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import ys.project.model.Note;
 
+import java.util.Optional;
+
 /**
  * Created by zorrax on 07.09.2018.
  *
@@ -13,5 +15,6 @@ import ys.project.model.Note;
 
 public interface NoteRepository extends MongoRepository<Note,String>
 {
-    Note findNoteById(String id);
+    //Note findNoteById(String id);
+
 }
