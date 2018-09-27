@@ -13,6 +13,7 @@ import ys.project.model.CustomDoc;
 import ys.project.model.Note;
 import ys.project.service.DocService;
 import ys.project.service.NoteService;
+import ys.project.service.UserService;
 
 import java.io.File;
 import java.io.IOException;
@@ -34,6 +35,10 @@ public class MainController {
     @Autowired
     public void setDocService(DocService serviceDoc) {this.serviceDoc = serviceDoc;}
 
+    /*private UserService serviceUser;
+    @Autowired
+    public void setDocService(UserService serviceUser) {this.serviceUser = serviceUser;}
+*/
 
     @Value("${upload.path}")
     private String uploadPath;
@@ -43,6 +48,7 @@ public class MainController {
     @RequestMapping("/")
     public String main(Model model){
         model.addAttribute("notes", serviceNote.findAll());
+        //model.addAttribute("user",serviceUser.loadUserByUsername())
         model.addAttribute("serverAddr",serverAddr);
         return "main";
     }
@@ -52,6 +58,12 @@ public class MainController {
         model.addAttribute("docs", serviceDoc.findAll());
         model.addAttribute("serverAddr",serverAddr);
         return "docPage";
+    }
+
+    @RequestMapping("/login")
+    public String login(Model model){
+        model.addAttribute("serverAddr",serverAddr);
+    return "login";
     }
 
     @PostMapping("/add")

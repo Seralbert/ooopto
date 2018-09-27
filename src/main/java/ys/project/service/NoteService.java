@@ -6,6 +6,7 @@ import ys.project.model.Note;
 import ys.project.repos.NoteRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by zorrax on 10.09.2018.
@@ -30,7 +31,9 @@ public class NoteService {
     }
 
     public Note findNoteById(String id){
-        return noteRepository.findNoteById(id);
+    // @TODO если в модель не переданн массив бросает исключение
+        return noteRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("NULL"));
+        //return noteRepository.findNoteById(id);
     }
 
 
