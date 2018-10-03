@@ -15,7 +15,11 @@
     <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
+
+
 <div class="container mt-5">
+    <#include "security.ftl">
+    <#include "naviBar.ftl">
     <#nested>
 </div>
 <!-- Optional JavaScript -->
