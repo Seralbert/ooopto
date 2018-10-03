@@ -33,10 +33,10 @@ public class UserService implements UserDetailsService {
 
     @PostConstruct
     public void init(){
-        userRepo.findByUsername("admin").ifPresent(user -> {
+    /*    userRepo.findByUsername("admin").ifPresent(user -> {
             user.setPassword(new BCryptPasswordEncoder().encode("admin"));
             userRepo.save(user);
-        });
+        });*/
         /*if(!userRepo.findByUsername("admin").isPresent()) {
             User admin = userRepo.findByUsername("admin").orElse(new User());
             admin.setUsername("admin");
@@ -48,5 +48,21 @@ public class UserService implements UserDetailsService {
             admin.setEnabled(true);
             userRepo.save(admin);
         }*/
+    }
+
+    public boolean addUser(@NonNull String username, @NonNull String password) {
+                if (!userRepo.findByUsername(username).isPresent()) {
+            userRepo.save(User.builder()
+                    .username(username)
+                    .password(new BCryptPasswordEncoder().encode(password))
+                    .authorities(ImmutableList.of(Role.USER))
+                    .accountNonExpired(true)
+                    .accountNonLocked(true)
+                    .credentialsNonExpired(true)
+                    .enabled(true)
+                    .build());
+            return true;
+        }
+        return false;
     }
 }
