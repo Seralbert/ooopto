@@ -75,4 +75,11 @@ public class MainController {
 
         return "redirect:/login";
     }
+
+    @RequestMapping("/users")
+    public String docs(Model model){
+        model.addAttribute("users", serviceUser.getUserList());
+        model.addAttribute("serverAddr",serverAddr);
+        return "users";
+    }
 }

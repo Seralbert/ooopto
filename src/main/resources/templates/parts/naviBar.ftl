@@ -14,6 +14,13 @@
             <li class="nav-item">
                 <a class="nav-link" href="http://${serverAddr}:8080/docs">Документы</a>
             </li>
+
+            <#if userLocal??>
+            <li class="nav-item">
+                <a class="nav-link" href="http://${serverAddr}:8080/users">Пользователи</a>
+            </li>
+            </#if>
+
             <#if !userLocal??>
             <li class="nav-item">
                 <a class="nav-link" href="http://${serverAddr}:8080/reg">Регистрация</a>
