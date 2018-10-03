@@ -22,9 +22,16 @@
 
                 </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="http://${serverAddr}:8080/login">Войти</a>
-            </li>
+            <#if userLocal??>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Выйти</a>
+                </li>
+            <#else>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://${serverAddr}:8080/login">Войти</a>
+                </li>
+            </#if>
         </ul>
 
     </div>

@@ -1,10 +1,13 @@
 package ys.project.service;
 
+import com.google.common.collect.ImmutableList;
+import jdk.nashorn.internal.ir.annotations.Immutable;
 import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import ys.project.model.Role;
 import ys.project.model.User;
@@ -16,6 +19,7 @@ import java.util.List;
 
 /**
  * Created by zorrax on 26.09.2018.
+ * Важно! постоянно происхолдит сброс пароля админа на deafult
  */
 @Service
 public class UserService implements UserDetailsService {
@@ -29,18 +33,20 @@ public class UserService implements UserDetailsService {
 
     @PostConstruct
     public void init(){
-    if(!userRepo.findByUsername("admin").isPresent()){
-        User admin = new User();
-        admin.setUsername("admin");
-        admin.setPassword("admin");
-            List<Role> roles = new ArrayList<>();
-            roles.add(Role.USER);
-        admin.setAuthorities(roles);
-        admin.setAccountNonExpired(true);
-        admin.setAccountNonLocked(true);
-        admin.setEnabled(true);
-
-        userRepo.save(admin);
-    }
+        userRepo.findByUsername("admin").ifPresent(user -> {
+            user.setPassword(new BCryptPasswordEncoder().encode("admin"));
+            userRepo.save(user);
+        });
+        /*if(!userRepo.findByUsername("admin").isPresent()) {
+            User admin = userRepo.findByUsername("admin").orElse(new User());
+            admin.setUsername("admin");
+            admin.setPassword("admin");
+            admin.setAuthorities(ImmutableList.of(Role.USER));
+            admin.setAccountNonExpired(true);
+            admin.setAccountNonLocked(true);
+            admin.setCredentialsNonExpired(true);
+            admin.setEnabled(true);
+            userRepo.save(admin);
+        }*/
     }
 }

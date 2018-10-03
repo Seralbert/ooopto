@@ -1,8 +1,6 @@
 package ys.project.model;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,8 +12,10 @@ import java.util.List;
  */
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
-@Document
+@AllArgsConstructor
+/*@Document*/
 public class User implements UserDetails{
     @Id
     private String id;

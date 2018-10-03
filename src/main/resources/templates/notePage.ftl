@@ -1,6 +1,5 @@
 <#import "parts/common.ftl" as c>
 <@c.page>
-<#include "parts/naviBar.ftl">
 <br />
 
     <#if note.fileName??>
