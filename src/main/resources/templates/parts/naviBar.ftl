@@ -1,5 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top sticky-top">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top sticky-top">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="http://${serverAddr}:8080/">
@@ -7,38 +8,39 @@
     </a>
 
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <a class="nav-link" href="http://${serverAddr}:8080/">Новости <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="http://${serverAddr}:8080/docs">Документы</a>
+                <a class="nav-link " href="http://${serverAddr}:8080/docs">Документы</a>
             </li>
 
-            <#if userLocal??>
+        <#if userLocal??>
             <li class="nav-item">
                 <a class="nav-link" href="http://${serverAddr}:8080/users">Пользователи</a>
             </li>
-            </#if>
-
+        </#if>
+        </ul>
+            <ul class="navbar-nav justify-content-end">
             <#if !userLocal??>
-            <li class="nav-item">
-                <a class="nav-link" href="http://${serverAddr}:8080/reg">Регистрация</a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://${serverAddr}:8080/reg">Регистрация</a>
+                </li>
             </#if>
-            <li class="nav-item">
-                <div class="text">
+                <li class="nav-item">
+                    <div class="text">
 
-                </div>
-            </li>
+                    </div>
+                </li>
             <#if userLocal??>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/logout">Выйти</a>
+                    <a class="nav-link btn btn-outline-info" href="/logout">Выйти</a>
                 </li>
             <#else>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://${serverAddr}:8080/login">Войти</a>
+                    <a class="nav-link btn btn-outline-info" href="http://${serverAddr}:8080/login">Войти</a>
                 </li>
             </#if>
         </ul>

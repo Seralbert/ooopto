@@ -1,7 +1,7 @@
 <div class="row">
 <#list notes as note>
 
-    <div class="col-sm-3 mb-3" style="width: 18rem;">
+    <div class="col-sm-6 col-lg-4 mb-3">
 
         <div class="card">
             <div class="card-header text-center">${note.date}</div>
@@ -12,8 +12,6 @@
             <div class="card-body">
 
                 <h5 class="card-title">${note.textCaption}</h5>
-                ${note.textMain}
-
                 <div class="text-right">
                     <a href="./delete/${note.id}" class="card-link text-right">Удалить</a>
                 </div>
