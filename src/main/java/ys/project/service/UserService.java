@@ -1,7 +1,6 @@
 package ys.project.service;
 
 import com.google.common.collect.ImmutableList;
-import jdk.nashorn.internal.ir.annotations.Immutable;
 import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,7 +13,6 @@ import ys.project.model.User;
 import ys.project.repos.UserRepository;
 
 import javax.annotation.PostConstruct;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -23,8 +21,10 @@ import java.util.List;
  */
 @Service
 public class UserService implements UserDetailsService {
-    @Autowired
+
     private UserRepository userRepo;
+    @Autowired
+    public void setUserRepo(UserRepository userRepo){this.userRepo = userRepo;}
     @Override
     public UserDetails loadUserByUsername(@NonNull String s) throws UsernameNotFoundException {
 

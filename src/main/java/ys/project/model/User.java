@@ -2,13 +2,13 @@ package ys.project.model;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.List;
 
 /**
  * Created by zorrax on 26.09.2018.
+ *
  */
 @Getter
 @Setter

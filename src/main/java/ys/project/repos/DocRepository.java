@@ -5,6 +5,7 @@ import ys.project.model.CustomDoc;
 
 /**
  * Created by zorrax on 13.09.2018.
+ *
  */
 public interface DocRepository extends MongoRepository<CustomDoc,String>
 {

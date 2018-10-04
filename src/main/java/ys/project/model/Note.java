@@ -10,6 +10,7 @@ import java.util.Date;
 
 /**
  * Created by zorrax on 06.09.2018.
+ *
  */
 
 @Getter @Setter @NoArgsConstructor

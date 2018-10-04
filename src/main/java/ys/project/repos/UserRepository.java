@@ -7,6 +7,7 @@ import java.util.Optional;
 
 /**
  * Created by zorrax on 26.09.2018.
+ *
  */
 public interface UserRepository extends MongoRepository<User,String> {
     Optional<User> findByUsername(String s);

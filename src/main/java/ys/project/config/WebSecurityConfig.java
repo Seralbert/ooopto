@@ -14,12 +14,14 @@ import ys.project.service.UserService;
 
 /**
  * Created by zorrax on 21.09.2018.
+ *
  */
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
-    @Autowired
     private UserService userService;
+    @Autowired
+    public void setUserService(UserService service){this.userService = service;}
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -27,7 +29,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
                 //.csrf().disable()
                 .authorizeRequests()
                     .antMatchers("/", "/docs", "/parts/*","/imgres/*", "/img/*", "/reg")
-                    //.antMatchers("/", "/**/favicon.ico")
                     .permitAll()
                 .anyRequest()
                     .authenticated()

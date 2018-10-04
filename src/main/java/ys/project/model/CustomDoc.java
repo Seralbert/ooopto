@@ -7,6 +7,7 @@ import org.springframework.data.annotation.Id;
 
 /**
  * Created by zorrax on 13.09.2018.
+ *
  */
 @Setter @Getter @NoArgsConstructor
 public class CustomDoc {
