@@ -1,6 +1,6 @@
 <#import "parts/common.ftl" as c>
 <@c.page>
-<br />
+<br/>
 <div>
 
     <table class="table">
@@ -8,9 +8,14 @@
         <tr>
             <th>Имя пользователя</th>
             <th>Роль</th>
+            <th>Аккаунт просрочен</th>
+            <th>Права просрочены</th>
+            <th>Заблокирован</th>
+            <th>Активирован</th>
+
+
         </tr>
         </thead>
-
         <tbody>
             <#list users as user>
             <tr>
@@ -18,7 +23,21 @@
                 ${user.username}
                 </td>
                 <td>
-                    USER
+                    <#list user.authorities as role>${role}<#sep>, </#list>
+                </td>
+                <td>
+                    <#if !user.accountNonExpired??>TRUE<#else>FALSE</#if>
+                </td>
+                <td>
+                    <#if !user.accountNonExpired??>TRUE<#else>FALSE</#if>
+                </td>
+                <td>
+                    <#if !user.accountNonExpired??>TRUE<#else>FALSE</#if>
+                </td>
+                <td>
+                    <#if user.enabled??>TRUE
+                    <#else>FALSE
+                    </#if>
                 </td>
             </tr>
             <#else>

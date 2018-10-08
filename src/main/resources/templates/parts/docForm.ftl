@@ -1,4 +1,5 @@
 <form method="post" action="/addDoc" enctype="multipart/form-data">
+    <input name="${_csrf.parameterName}" value="${_csrf.token}" type="hidden">
     <div class="input-group">
         <input class="form-control" type="text" name="caption" placeholder="Введите описание" />
     </div>

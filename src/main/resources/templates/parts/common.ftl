@@ -17,10 +17,25 @@
 <body>
 
 
-<div class="container mt-5">
+<div class="container">
+
+    <div class="container">
+        <div class="row justify-content-center"
+        <div class="col-6">
+            <img class="img-fluid" src="imgres/header.jpg">
+        </div>
+    </div>
+
     <#include "security.ftl">
     <#include "naviBar.ftl">
     <#nested>
+    <div class="container">
+        <div class="row justify-content-center"
+        <div class="col">
+            <img class="img-fluid" src="imgres/top.jpg">
+            Автор титульного фото К. Удовиченко
+        </div>
+    </div>
 </div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

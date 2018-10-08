@@ -1,5 +1,6 @@
 <div class="form-group mt-3">
 <form method="post" enctype="multipart/form-data" action="/add">
+    <input name="${_csrf.parameterName}" value="${_csrf.token}" type="hidden">
     <div class="input-group ">
         <input type="text" class="form-control" name="textCaption" placeholder="Введите заголовок" />
     </div>
