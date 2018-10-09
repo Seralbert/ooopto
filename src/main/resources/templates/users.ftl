@@ -12,6 +12,7 @@
             <th>Права просрочены</th>
             <th>Заблокирован</th>
             <th>Активирован</th>
+            <th></th>
 
 
         </tr>
@@ -38,6 +39,9 @@
                     <#if user.enabled??>TRUE
                     <#else>FALSE
                     </#if>
+                </td>
+                <td>
+                    <a href="/user/${user.username}">EDIT</a>
                 </td>
             </tr>
             <#else>

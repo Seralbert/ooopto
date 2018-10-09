@@ -14,6 +14,7 @@ import ys.project.repos.UserRepository;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by zorrax on 26.09.2018.
@@ -30,6 +31,8 @@ public class UserService implements UserDetailsService {
 
         return userRepo.findByUsername(s).orElseThrow( () -> new UsernameNotFoundException("user " + s + "was not found"));
     }
+
+
 
     @PostConstruct
     public void init(){
@@ -67,5 +70,13 @@ public class UserService implements UserDetailsService {
     }
     public List<User> getUserList(){
         return userRepo.findAll();
+    }
+
+    public boolean isAdmin(String username){
+        return loadUserByUsername(username).getAuthorities().contains(Role.ADMIN);
+    }
+
+    public void save(User user) {
+        userRepo.save(user);
     }
 }
