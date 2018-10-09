@@ -2,7 +2,6 @@ package ys.project.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -78,14 +77,13 @@ public class MainController {
 
     @RequestMapping("/user/{id}")
     public String editUser(@PathVariable String id, Model model) {
-        //User current = userService.findUserByName(id).orElseThrow(() -> new UsernameNotFoundException("Ошибка в получении данных из БД"));
+
         User current = (User) userService.loadUserByUsername(id);
 
-        System.out.println(current.toString());
-        System.out.println(current.getAuthorities().toString());
         model.addAttribute("user", current);
         model.addAttribute("roles", Role.values());
         model.addAttribute("serverAddr", serverAddr);
+
         return "userForm";
     }
 
