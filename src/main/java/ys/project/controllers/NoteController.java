@@ -35,14 +35,6 @@ public class NoteController {
 
     @RequestMapping("/")
     public String main(Model model){
-        /*Можно получить информацию о аутентифиакации
-        */
-        /*Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-
-        User user = (User) authentication.getPrincipal();
-        model.addAttribute("username", user.getUsername());
-        model.addAttribute("roles", user.getAuthorities().stream().map(Role::getAuthority).collect(joining(",")));
-*/
 
         model.addAttribute("notes", serviceNote.findAll());
         model.addAttribute("serverAddr",serverAddr);

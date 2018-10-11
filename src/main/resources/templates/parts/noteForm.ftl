@@ -1,24 +1,34 @@
 <div class="form-group mt-3">
-<form method="post" enctype="multipart/form-data" action="/add">
-    <input name="${_csrf.parameterName}" value="${_csrf.token}" type="hidden">
-    <div class="input-group ">
-        <input type="text" class="form-control" name="textCaption" placeholder="Введите заголовок" />
-    </div>
-    <div class="input-group">
-    <textarea style="margin-top: 5px" class="form-control" id="formControlTextarea" rows="3" name="textMain" placeholder="Введите основной текст"></textarea>
-    </div>
-    <nav class="navbar navbar-light bg-light">
-        <span class="navbar-text">Добавить фото</span>
-        <div class="input-group">
-        <input class="form-control mr-sm-2" type="file" name="file" id="imgFile" accept="image/*" />
-        <button type="submit" class="btn btn-primary pull-right my-2  my-sm-0">Опубликовать</button>
+    <form method="post" enctype="multipart/form-data" action="/add">
+        <input name="${_csrf.parameterName}" value="${_csrf.token}" type="hidden">
+        <div class="form-group ">
+            <input type="text" class="form-control" name="textCaption" placeholder="Введите заголовок"/>
         </div>
-    </nav>
+        <div class="form-group">
+            <textarea style="margin-top: 5px" class="form-control" id="formControlTextarea" rows="3" name="textMain"
+                      placeholder="Введите основной текст"></textarea>
+        </div>
+        <div>
+            <h5>
+                Добавить фото
+            </h5>
+        </div>
 
-    <nav class="navbar navbar-light bg-light">
-        <span class="navbar-text">Прикрепить файл</span>
-        <input class="form-control mr-sm-2" type="file" name="fileDoc" id="docFile" />
+        <div class="form-group">
+            <input class="form-control mr-sm-2" type="file" name="file" id="imgFile" accept="image/*"/>
 
-    </nav>
-</form>
+        </div>
+        <div>
+            <h5>
+                Прикрепить файл
+            </h5>
+        </div>
+        <div class="form-group">
+            <input class="form-control mr-sm-2" type="file" name="fileDoc" id="docFile"/>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-dark btn-block">Опубликовать</button>
+        </div>
+    </form>
 </div>

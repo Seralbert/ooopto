@@ -3,12 +3,17 @@
     <div class="input-group">
         <input class="form-control" type="text" name="caption" placeholder="Введите описание" />
     </div>
-    <nav class="navbar navbar-light bg-light ">
-        <span class="navbar-text">Добавить документ</span>
+<br>
+    <div class="text">
+        <h5>Добавить документ</h5>
+    </div>
 
-    <div class="input-group">
+    <div class="form-group">
         <input class="form-control mr-sm-2" type="file" name="file" id="docFile"  />
-        <button type="submit" class="btn btn-primary pull-right my-2  my-sm-0">Опубликовать</button>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-dark btn-block">Опубликовать</button>
     </div>
 
 </nav>
