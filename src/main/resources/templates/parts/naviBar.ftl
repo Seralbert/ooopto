@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top sticky-top">
+<nav class="navbar navbar-dark bg-dark sticky-top  navbar-expand-lg  fixed-top">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
             aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -9,7 +9,7 @@
 
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="http://${serverAddr}:8080/">Новости <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
@@ -17,9 +17,11 @@
             </li>
 
         <#if userLocal??>
+        <#if userLocal.isAdmin()>
             <li class="nav-item">
-                <a class="nav-link" href="http://${serverAddr}:8080/users">Пользователи</a>
+                <a class="nav-link" href="http://${serverAddr}:8080/users">Пользователи </a>
             </li>
+        </#if>
         </#if>
         </ul>
             <ul class="navbar-nav justify-content-end">

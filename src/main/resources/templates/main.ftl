@@ -1,17 +1,13 @@
 <#import "parts/common.ftl" as c>
 <@c.page>
-    <#assign
-    chkSession = Session.SPRING_SECURITY_CONTEXT??
-    >
-    <#if chkSession>
-        <#assign
-        userLocal = Session.SPRING_SECURITY_CONTEXT.authentication.principal
-        name = userLocal.getUsername()
-        >
-    </#if>
+    <#include "parts/security.ftl">
+
+
     <#if userLocal??>
-        <#include "parts/noteForm.ftl" />
+        <#if userLocal.isEditor()>
+            <#include "parts/noteForm.ftl" />
+        </#if>
     </#if>
-    <br>
-<#include "parts/noteList.ftl" />
+<br>
+    <#include "parts/noteList.ftl" />
 </@c.page>

@@ -30,4 +30,7 @@ public class User implements UserDetails{
     public boolean isAdmin(){
         return authorities.contains(Role.ADMIN);
     }
+    public boolean isEditor() {
+        return authorities.contains(Role.EDITOR);
+    }
 }

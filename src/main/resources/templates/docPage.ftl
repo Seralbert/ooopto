@@ -1,6 +1,6 @@
 <#import "parts/common.ftl" as c>
 <@c.page>
-<br />
+<br/>
     <#assign
     chkSession = Session.SPRING_SECURITY_CONTEXT??
     >
@@ -11,10 +11,9 @@
         >
     </#if>
     <#if userLocal??>
-
-
-        <#include "parts/docForm.ftl">
+        <#if userLocal.isEditor()>
+            <#include "parts/docForm.ftl">
+        </#if>
     </#if>
-
     <#include "parts/docList.ftl">
 </@c.page>

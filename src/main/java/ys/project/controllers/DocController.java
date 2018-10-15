@@ -32,7 +32,9 @@ public class DocController {
     public void setDocService(DocService serviceDoc) {this.serviceDoc = serviceDoc;}
 
     @RequestMapping("/docs")
-    public String docs(Model model){
+    public String docs(
+
+            Model model){
         model.addAttribute("docs", serviceDoc.findAll());
         model.addAttribute("serverAddr",serverAddr);
         return "docPage";
@@ -74,5 +76,14 @@ public class DocController {
         serviceDoc.deleteDoc(serviceDoc.findCustomDocById(id));
         model.addAttribute("serverAddr",serverAddr);
         return "redirect:/docs";
+    }
+
+    @RequestMapping("/docEdit/{id}")
+    public String editRequestDoc(@PathVariable String id, Model model){
+        CustomDoc current = (CustomDoc) serviceDoc.findCustomDocById(id);
+        model.addAttribute("serverAddr",serverAddr);
+        model.addAttribute("id", id);
+        model.addAttribute("doc", current);
+        return "docPage";
     }
 }

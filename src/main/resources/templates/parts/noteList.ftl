@@ -1,4 +1,5 @@
 <div class="row">
+
 <#list notes as note>
 
     <div class="col-sm-6 col-lg-4 mb-3">
@@ -12,9 +13,14 @@
             <div class="card-body">
 
                 <h5 class="card-title">${note.textCaption}</h5>
-                <div class="text-right">
-                    <a href="./delete/${note.id}" class="card-link text-right">Удалить</a>
-                </div>
+                <#if userLocal??>
+                    <#if userLocal.isEditor()>
+                        <div class="text-right">
+                            <a href="./delete/${note.id}" class="card-link text-right">Удалить</a>
+                        </div>
+                    </#if>
+                </#if>
+
             </div>
             </a>
 

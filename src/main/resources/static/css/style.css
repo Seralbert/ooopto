@@ -1,9 +1,15 @@
 body {
     background-attachment: fixed;
-    background-image: url(../imgres/bg.jpg);
+    background-image: url(../imgres/bg25.jpg);
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+}
+
+.fixspace {
+    padding: 0;
+    margin: 0;
+    background-color: #0074b5;
 }
 
