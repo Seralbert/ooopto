@@ -27,8 +27,7 @@
 
 
 
-    <#include "security.ftl">
-    <#include "naviBar.ftl">
+
 <div class="container">
 
 
