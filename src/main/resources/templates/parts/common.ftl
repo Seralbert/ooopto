@@ -16,15 +16,6 @@
     <!--script src='https://www.google.com/recaptcha/api.js'></script-->
 </head>
 <body>
-<div class="d-flex flex-row bd-highlight mb-0" style="background-color: #0074b5;">
-    <div class="p-0 m-0 bd-highlight fixspace">
-        <img class="img-fluid" src="/imgres/headertxt.jpg" height="300" width="250"/>
-    </div>
-    <div class="p-0 bd-highlight">
-        <div class="fixspace" "></div>
-    </div>
-</div>
-
 
 
 
