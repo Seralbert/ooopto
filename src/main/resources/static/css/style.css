@@ -13,3 +13,12 @@ body {
     background-color: #0074b5;
 }
 
+.findform {
+
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    background-color: rgba(0,0,0, 0.75);
+}
+
