@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="navbarToggler">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="/">На главную <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/"><span class="oi oi-home"></span> <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link " href="/find">Поиск</a>
