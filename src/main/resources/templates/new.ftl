@@ -11,7 +11,18 @@
                 <label style="color: azure">Наименование отдела</label>
                 <select id="rp" class="form-control">
                     <option selected>Великий Новгород</option>
-                    <option>...</option>
+                    <option>Батецкий межмуниципальный отдел</option>
+                    <option>Боровический межмуниципальный отдел</option>
+                    <option>Валдайский межмуниципальный отдел</option>
+                    <option>Демянский межмуниципальный отдел</option>
+                    <option>Крестецкий межмуниципальный отдел</option>
+                    <option>Маловишерский межмуниципальный отдел</option>
+                    <option>Окуловский межмуниципальный отдел</option>
+                    <option>Парфинский межмуниципальный отдел</option>
+                    <option>Солецкий межмуниципальный отдел</option>
+                    <option>Старорусский межмуниципальный отдел</option>
+                    <option>Холмский межмуниципальный отдел</option>
+                    <option>Новгородский межмуниципальный отдел</option>
                 </select>
             </div>
         </div>
@@ -76,12 +87,12 @@
             </div>
             <div class="form-group ">
                 <button class="btn btn-success btn-block">
-                <span class="oi oi-plus">Добавить</span></button>
+                <span class="oi oi-plus">&nbsp Добавить</span></button>
             </div>
         </div>
 
         <div class="form-row justify-content-md-end">
-            <button type="submit" class="col-md-2 btn btn-primary pull-right"><span class="oi oi-check"></span>Создать</button>
+            <button type="submit" class="col-md-2 btn btn-primary pull-right"><span class="oi oi-check"></span>&nbsp Создать</button>
         </div>
 
     </form>
