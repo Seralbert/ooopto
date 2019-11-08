@@ -30,7 +30,7 @@
 
         <div class="form-row">
             <div class="form-group col-md-4">
-                <label style="color: azure">Номер документа</label>
+                <label class="label-form">Номер документа</label>
                 <input type="text" class="form-control" id="docNumber" placeholder="Номер документа">
             </div>
             <div class="form-group col-md-4">
@@ -63,8 +63,13 @@
                 <input type="text" class="form-control" id="docAuthor">
             </div>
         </div>
+
+        <div class="form-row justify-content-md-end">
+            <button class="col-md-2 btn btn-success btn-block"><span class="oi oi-plus">&nbsp Добавить</span></button>
+        </div>
+        <br>
         <div class="form-row">
-            <div class="form-group col-md-10">
+            <div class="form-group col-md-12">
 
                 <table class="table table-sm">
                     <thead>
@@ -86,8 +91,7 @@
                 </table>
             </div>
             <div class="form-group ">
-                <button class="btn btn-success btn-block">
-                <span class="oi oi-plus">&nbsp Добавить</span></button>
+
             </div>
         </div>
 
