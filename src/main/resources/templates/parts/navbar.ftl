@@ -22,6 +22,11 @@
             </li>
 
         </ul>
+        <ul class="navbar-nav justify-content-end">
+            <li>
+                <span class="oi oi-bolt"></span>
+            </li>
+        </ul>
 
     </div>
 </nav>

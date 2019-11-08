@@ -21,7 +21,8 @@
 
 
 <div class="container">
-
+    <#include "navbar.ftl">
+    <br>
 
     <#nested>
 

@@ -1,55 +1,73 @@
 <#import "parts/common.ftl" as c>
 <@c.page>
 
-    <#include "parts/navbar.ftl">
-<br>
 <div class="container">
 
     <form class="findform">
         <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+            <div class="form-group col-md-12">
+                <label style="color: azure">Наименование отдела</label>
+                <select id="rp" class="form-control">
+                    <option selected>Великий Новгород</option>
+                    <option>Батецкий межмуниципальный отдел</option>
+                    <option>Боровический межмуниципальный отдел</option>
+                    <option>Валдайский межмуниципальный отдел</option>
+                    <option>Демянский межмуниципальный отдел</option>
+                    <option>Крестецкий межмуниципальный отдел</option>
+                    <option>Маловишерский межмуниципальный отдел</option>
+                    <option>Окуловский межмуниципальный отдел</option>
+                    <option>Парфинский межмуниципальный отдел</option>
+                    <option>Солецкий межмуниципальный отдел</option>
+                    <option>Старорусский межмуниципальный отдел</option>
+                    <option>Холмский межмуниципальный отдел</option>
+                    <option>Новгородский межмуниципальный отдел</option>
+                </select>
             </div>
-            <div class="form-group col-md-6">
-                <label for="inputPassword4">Password</label>
-                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-            </div>
         </div>
-        <div class="form-group">
-            <label for="inputAddress">Address</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-        </div>
-        <div class="form-group">
-            <label for="inputAddress2">Address 2</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-        </div>
+
+
         <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputCity">City</label>
-                <input type="text" class="form-control" id="inputCity">
+            <div class="form-group col-md-4">
+                <label class="label-form">Номер документа</label>
+                <input type="text" class="form-control" id="docNumber" placeholder="Номер документа">
             </div>
             <div class="form-group col-md-4">
-                <label for="inputState">State</label>
-                <select id="inputState" class="form-control">
-                    <option selected>Choose...</option>
+                <label class="label-form">Дата документа</label>
+                <input type="date" class="form-control" id="docDate" placeholder="01.01.2000">
+            </div>
+            <div class="form-group col-md-4">
+                <label class="label-form">&nbsp;</label>
+                <input type="date" class="form-control" id="docDate" placeholder="01.01.2000">
+            </div>
+
+
+            <div class="form-group col-md-2">
+                <label class="label-form">Система координат</label>
+                <select id="sysCoord" class="form-control">
+                    <option selected>МСК-22</option>
                     <option>...</option>
                 </select>
             </div>
-            <div class="form-group col-md-2">
-                <label for="inputZip">Zip</label>
-                <input type="text" class="form-control" id="inputZip">
+
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label class="label-form">Название документа содержит</label>
+                <input type="text" class="form-control" id="docName">
             </div>
         </div>
-        <div class="form-group">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck">
-                    Check me out
-                </label>
+
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label class="label-form">Разработчик документа</label>
+                <input type="text" class="form-control" id="docAuthor">
             </div>
         </div>
-        <button type="submit" class="btn btn-primary">Sign in</button>
+
+        <div class="form-row justify-content-md-end">
+            <button type="submit" class="col-md-2 btn btn-primary pull-right"><span class="oi oi-magnifying-glass"></span>&nbsp Поиск</button>
+        </div>
+
     </form>
 
 </div>

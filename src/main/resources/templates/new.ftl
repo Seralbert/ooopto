@@ -1,8 +1,6 @@
 <#import "parts/common.ftl" as c>
 <@c.page>
 
-    <#include "parts/navbar.ftl">
-<br>
 <div class="container">
 
     <form class="findform">
@@ -100,6 +98,6 @@
         </div>
 
     </form>
-
 </div>
+
 </@c.page>
