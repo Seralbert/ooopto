@@ -12,7 +12,9 @@ label {
     color: azure;
     margin-bottom: 0 !important;
 }
-
+.card-header{
+    padding: 0 !important;
+}
 .fixspace {
     padding: 0;
     margin: 0;

@@ -3,11 +3,11 @@
 
 <div class="container">
 
-    <form class="findform">
+    <form class="findform" enctype="multipart/form-data" action="/addNew" method="post">
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label style="color: azure">Наименование отдела</label>
-                <select id="rp" class="form-control">
+                <select id="rp" name = "rp" class="form-control">
                     <option selected>Великий Новгород</option>
                     <option>Батецкий межмуниципальный отдел</option>
                     <option>Боровический межмуниципальный отдел</option>
@@ -29,19 +29,19 @@
         <div class="form-row">
             <div class="form-group col-md-4">
                 <label class="label-form">Номер документа</label>
-                <input type="text" class="form-control" id="docNumber" placeholder="Номер документа">
+                <input type="text" class="form-control" id="docNumber" name="docNumber" placeholder="Номер документа">
             </div>
             <div class="form-group col-md-4">
                 <label style="color: azure">Дата документа</label>
-                <input type="date" class="form-control" id="docDate" placeholder="01.01.2000">
+                <input type="date" class="form-control" id="docDate" name="docDate">
             </div>
             <div class="form-group col-md-2">
             <label style="color: azure">Количество листов</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="1">
+            <input type="text" class="form-control" id="numList" name="numList" placeholder="1">
             </div>
             <div class="form-group col-md-2">
                 <label style="color: azure">Система координат</label>
-                <select id="sysCoord" class="form-control">
+                <select id="sysCoord" name="sysCoord" class="form-control">
                     <option selected>МСК-22</option>
                     <option>...</option>
                 </select>
@@ -51,14 +51,14 @@
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label style="color: azure">Наименование документа</label>
-                <input type="text" class="form-control" id="docName">
+                <input type="text" class="form-control" id="docName" name="docName">
             </div>
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label style="color: azure">Разработчик документа</label>
-                <input type="text" class="form-control" id="docAuthor">
+                <input type="text" class="form-control" id="docAuthor" name="docAuthor">
             </div>
         </div>
 

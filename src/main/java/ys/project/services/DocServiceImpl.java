@@ -21,6 +21,10 @@ public class DocServiceImpl implements DocService {
     }
 
     @Override
+    public void addDoc(GFDDoc o) {
+        repository.save(o);
+    }
+    @Override
     public List<GFDDoc> findAll() {
         return repository.findAll();
     }
