@@ -3,10 +3,7 @@ package ys.project.model;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -15,9 +12,9 @@ import java.util.Date;
  */
 
 @Entity
-
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "gfd_doc")
 public class GFDDoc {
     @Id
     @GeneratedValue
@@ -36,8 +33,6 @@ public class GFDDoc {
     private String nameDoc;
     @Column(name = "authorDoc")
     private String authorDoc;
-    //@Column(name = "attachment")
-    //private List<AppendDoc> attachment;
 
     public int getId() {
         return id;

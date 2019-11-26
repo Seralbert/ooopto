@@ -1,7 +1,7 @@
 <#import "parts/common.ftl" as c>
 <@c.page>
 <div class="container">
-    <table class="table table-sm table-dark">
+    <table class="table table-sm table-dark" style="background-color: rgba(0,0,0, 0.75);">
         <thead>
         <tr>
             <th scope="col">#</th>
@@ -23,7 +23,7 @@
                 ${doc.numDoc}
                 </td>
                 <td>
-                ${doc.dateDoc}
+                ${doc.dateDoc?string("dd.MM.yyyy")}
                 </td>
                 <td>
                 ${doc.nameDoc}

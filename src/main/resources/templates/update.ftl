@@ -36,8 +36,8 @@
                 <input type="date" class="form-control" id="docDate" name="docDate">
             </div>
             <div class="form-group col-md-2">
-            <label style="color: azure">Количество листов</label>
-            <input type="text" class="form-control" id="numList" name="numList" placeholder="1" value="1">
+                <label style="color: azure">Количество листов</label>
+                <input type="text" class="form-control" id="numList" name="numList" placeholder="1" value="1">
             </div>
             <div class="form-group col-md-2">
                 <label style="color: azure">Система координат</label>
@@ -82,14 +82,14 @@
                     <tbody>
                         <#list listAppendDoc as doc>
                         <tr>
-                        <th scope="row">1</th>
-                        <td>${doc}</td>
-                        <td><span class="oi oi-dial"></span></td>
-                        <td><span class="oi oi-x"></span></td>
+                            <th scope="row">1</th>
+                            <td>${doc}</td>
+                            <td><span class="oi oi-dial"></span></td>
+                            <td><span class="oi oi-x"></span></td>
                         </tr>
-                    <#else>
+                        <#else>
                         <tr><td>Нет образов</td></tr>
-                    </#list>
+                        </#list>
 
 
                     </tbody>

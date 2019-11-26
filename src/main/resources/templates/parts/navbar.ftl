@@ -21,6 +21,10 @@
                 <a class="nav-link " href="/report">Отчет</a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link " href="/append">TEST</a>
+            </li>
+
         </ul>
         <ul class="navbar-nav justify-content-end">
             <li>

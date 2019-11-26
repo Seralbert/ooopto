@@ -3,7 +3,7 @@
 
 <div class="container">
 
-    <form class="findform">
+    <form class="findform" action="/dofind" method="post">
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label style="color: azure">Наименование отдела</label>
