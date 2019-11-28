@@ -16,9 +16,17 @@ import java.util.Date;
 @AllArgsConstructor
 @Table(name = "gfd_doc")
 public class GFDDoc {
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     @Id
     @GeneratedValue
-    private int id;
+    private Long id;
     @Column(name = "nameTO")
     private String nameTO;
     @Column(name = "numDoc")
@@ -34,13 +42,6 @@ public class GFDDoc {
     @Column(name = "authorDoc")
     private String authorDoc;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getNameTO() {
         return nameTO;

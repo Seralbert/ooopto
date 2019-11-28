@@ -11,6 +11,7 @@ import java.util.List;
  */
 public interface AppendDocService {
     List<AppendDoc> findByDescription(String s);
+    List<AppendDoc> findByParentId(Long id);
 
     void addAppendDoc(AppendDoc o);
 }

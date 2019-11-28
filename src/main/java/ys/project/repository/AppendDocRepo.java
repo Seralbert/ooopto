@@ -12,5 +12,6 @@ import java.util.List;
  */
 public interface AppendDocRepo extends JpaRepository<AppendDoc, Long> {
     List<AppendDoc> findByDescription(String description);
-    //List<AppendDoc> findByParent(GFDDoc doc);
+    List<AppendDoc> findAppendDocByParentId(Long id);
+    //(GFDDoc doc);
 }

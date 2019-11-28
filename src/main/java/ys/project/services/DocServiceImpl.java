@@ -22,7 +22,7 @@ public class DocServiceImpl implements DocService {
 
 
     @Override
-    public void addDoc(GFDDoc o) {
+    public void save(GFDDoc o) {
         repository.save(o);
     }
     @Override

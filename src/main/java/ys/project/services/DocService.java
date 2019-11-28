@@ -14,5 +14,5 @@ public interface DocService {
 
     List<GFDDoc> findAll();
 
-    void addDoc(GFDDoc o);
+    void save(GFDDoc o);
 }

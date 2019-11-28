@@ -2,7 +2,7 @@
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-            <form id="modalFrame" action="doAddDoc" method="post">
+            <form id="modalFrame" action="doAddDoc" method="post" enctype="multipart/form-data">
             <div class="modal-header">
                 <h5 class="modal-title" id="ModalTitle" style="color: #1b1e21;">Добавить образ</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">

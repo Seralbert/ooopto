@@ -29,21 +29,22 @@
         <div class="form-row">
             <div class="form-group col-md-4">
                 <label class="label-form">Номер документа</label>
-                <input type="text" class="form-control" id="docNumber" name="docNumber" placeholder="Номер документа">
+                <input type="text" class="form-control" id="docNumber" name="docNumber" placeholder="Номер документа" value = "${docNumber}">
             </div>
             <div class="form-group col-md-4">
                 <label style="color: azure">Дата документа</label>
-                <input type="date" class="form-control" id="docDate" name="docDate">
+                <input type="date" class="form-control" id="docDate" name="docDate" value="${docDate}">
+
             </div>
             <div class="form-group col-md-2">
                 <label style="color: azure">Количество листов</label>
-                <input type="text" class="form-control" id="numList" name="numList" placeholder="1" value="1">
+                <input type="text" class="form-control" id="numList" name="numList" placeholder="1" value="1" value = "${numList}">
             </div>
             <div class="form-group col-md-2">
                 <label style="color: azure">Система координат</label>
                 <select id="sysCoord" name="sysCoord" class="form-control">
                     <option selected>МСК-22</option>
-                    <option>...</option>
+                    <option>МСК-53</option>
                 </select>
             </div>
 
@@ -51,14 +52,14 @@
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label style="color: azure">Наименование документа</label>
-                <input type="text" class="form-control" id="docName" name="docName">
+                <input type="text" class="form-control" id="docName" name="docName" value = "${docName}">
             </div>
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label style="color: azure">Разработчик документа</label>
-                <input type="text" class="form-control" id="docAuthor" name="docAuthor">
+                <input type="text" class="form-control" id="docAuthor" name="docAuthor" value = "${docAuthor}">
             </div>
         </div>
 
@@ -83,7 +84,7 @@
                         <#list listAppendDoc as doc>
                         <tr>
                             <th scope="row">1</th>
-                            <td>${doc}</td>
+                            <td>${doc.description}</td>
                             <td><span class="oi oi-dial"></span></td>
                             <td><span class="oi oi-x"></span></td>
                         </tr>
@@ -101,7 +102,7 @@
         </div>
 
         <div class="form-row justify-content-md-end">
-            <button type="submit" class="col-md-2 btn btn-primary pull-right"><span class="oi oi-check"></span>&nbsp Создать</button>
+            <button type="submit" class="col-md-2 btn btn-primary pull-right"><span class="oi oi-check"></span>&nbsp Сохранить</button>
         </div>
 
     </form>

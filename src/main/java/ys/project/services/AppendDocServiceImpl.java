@@ -3,7 +3,6 @@ package ys.project.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ys.project.model.AppendDoc;
-import ys.project.model.GFDDoc;
 import ys.project.repository.AppendDocRepo;
 
 import java.util.List;
@@ -24,6 +23,11 @@ public class AppendDocServiceImpl implements AppendDocService {
     @Override
     public List<AppendDoc> findByDescription(String s) {
         return appendDocRepo.findByDescription(s);
+    }
+
+    @Override
+    public List<AppendDoc> findByParentId(Long id) {
+        return appendDocRepo.findAppendDocByParentId(id);
     }
 
     @Override

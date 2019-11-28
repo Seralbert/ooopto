@@ -7,7 +7,7 @@
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label style="color: azure">Наименование отдела</label>
-                <select id="rp" name = "rp" class="form-control">
+                <select id="rp" name="rp" class="form-control">
                     <option selected>Великий Новгород</option>
                     <option>Батецкий межмуниципальный отдел</option>
                     <option>Боровический межмуниципальный отдел</option>
@@ -33,17 +33,17 @@
             </div>
             <div class="form-group col-md-4">
                 <label style="color: azure">Дата документа</label>
-                <input type="date" class="form-control" id="docDate" name="docDate">
+                <input type="date" class="form-control " id="docDate" name="docDate">
             </div>
             <div class="form-group col-md-2">
-            <label style="color: azure">Количество листов</label>
-            <input type="text" class="form-control" id="numList" name="numList" placeholder="1" value="1">
+                <label style="color: azure">Количество листов</label>
+                <input type="text" class="form-control" id="numList" name="numList" placeholder="1" value="1">
             </div>
             <div class="form-group col-md-2">
                 <label style="color: azure">Система координат</label>
                 <select id="sysCoord" name="sysCoord" class="form-control">
                     <option selected>МСК-22</option>
-                    <option>...</option>
+                    <option>МСК-53</option>
                 </select>
             </div>
 
@@ -63,45 +63,10 @@
         </div>
 
         <div class="form-row justify-content-md-end">
-            <a data-toggle="modal" data-target="#modalFrame" class="col-md-2 btn btn-success btn-block"><span class="oi oi-plus">&nbsp Добавить</span></a>
-        </div>
 
-        <br>
-        <div class="form-row">
-            <div class="form-group col-md-12">
-
-                <table class="table table-sm">
-                    <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Имя файла</th>
-                        <th scope="col">#</th>
-                        <th scope="col">#</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                        <#list listAppendDoc as doc>
-                        <tr>
-                        <th scope="row">1</th>
-                        <td>${doc}</td>
-                        <td><span class="oi oi-dial"></span></td>
-                        <td><span class="oi oi-x"></span></td>
-                        </tr>
-                    <#else>
-                        <tr><td>Нет образов</td></tr>
-                    </#list>
-
-
-                    </tbody>
-                </table>
-            </div>
-            <div class="form-group ">
-
-            </div>
-        </div>
-
-        <div class="form-row justify-content-md-end">
-            <button type="submit" class="col-md-2 btn btn-primary pull-right"><span class="oi oi-check"></span>&nbsp Создать</button>
+            <button type="submit" class="col-md-2 btn btn-primary pull-right"><span class="oi oi-check"></span>&nbsp
+                Создать
+            </button>
         </div>
 
     </form>

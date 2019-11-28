@@ -24,6 +24,38 @@ public class AppendDoc {
     @Column(name = "filePath")
     private String filePath;
 
+    public Long getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(Long parentId) {
+        this.parentId = parentId;
+    }
+
+    @Column(name = "parent_id")
+    private Long parentId;
+
+    @Column(name = "uuid")
+    private String uuidFile;
+
+    /*@Column(name ="unit")
+    private String unit;
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
+*/
+    public String getUuidFile() {
+        return uuidFile;
+    }
+
+    public void setUuidFile(String uuidFile) {
+        this.uuidFile = uuidFile;
+    }
 
     public AppendDoc() {
     }
@@ -50,5 +82,9 @@ public class AppendDoc {
 
     public void setFilePath(String filePath) {
         this.filePath = filePath;
+    }
+
+    public void setParentId(GFDDoc parentId) {
+        this.parentId = parentId.getId();
     }
 }
