@@ -11,8 +11,10 @@ import java.util.List;
 
 public interface DocService {
 
-
+    GFDDoc findById(Long id);
+    GFDDoc findByNameDoc(String name);
     List<GFDDoc> findAll();
 
     void save(GFDDoc o);
+    void update(GFDDoc o);
 }

@@ -25,7 +25,7 @@ public class GFDDoc {
     }
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Column(name = "nameTO")
     private String nameTO;

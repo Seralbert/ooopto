@@ -49,6 +49,10 @@ public class EditController {
 
         return "new";
     }
+    /*
+    * Создаем новую запись - документ для добавления в него образов
+    *
+    * */
     @PostMapping("/addNew")
     public String addDoc(@RequestParam(required = false) String rp ,
                          @RequestParam(required = false) String docNumber,
@@ -60,6 +64,7 @@ public class EditController {
                          Model model
     ){
 
+
             GFDDoc gfdObj = new GFDDoc();
 
             gfdObj.setNameTO(rp);
@@ -69,7 +74,7 @@ public class EditController {
             gfdObj.setCoord(sysCoord);
             gfdObj.setNameDoc(docName);
             gfdObj.setAuthorDoc(docAuthor);
-
+            //System.out.println(gfdObj.getId());
             service.save(gfdObj);
             //System.out.println("gfd "+gfdObj.getDateDoc());
             tmp = gfdObj;
@@ -107,23 +112,31 @@ public class EditController {
         }
         return "redirect:/update";
     }
+    /*
+    * Обновление существуещего объекта
+    * на фронте
+    * */
+
     @GetMapping("/update")
     public String upd(Model model
         ){
         //System.out.println(tmp.getId());
         model.addAttribute("listAppendDoc", appendService.findByParentId(tmp.getId()));
+        System.err.println("tmp.err! : " + tmp.getId());
         model.addAttribute("docAuthor",tmp.getAuthorDoc());
         model.addAttribute("docName",tmp.getNameDoc());
         model.addAttribute("docDate",DataHandler.dateToString(tmp.getDateDoc()));
-
+        model.addAttribute("docID", tmp.getId());
         //model.addAttribute("docDate",tmp.getDateDoc());
         model.addAttribute("numList",tmp.getNumList());
         model.addAttribute("docNumber",tmp.getNumDoc());
+        System.err.println("docNumber" + tmp.getNumDoc());
         return "update";
     }
     @PostMapping("/update")
     public String updateGFDDoc(
             @RequestParam(required = false) String rp ,
+            @RequestParam(name = "docID", required = false) Long id ,
             @RequestParam(required = false) String docNumber,
             @RequestParam(required = false) String docDate,
             @RequestParam(required = false) String numList,
@@ -132,18 +145,23 @@ public class EditController {
             @RequestParam(required = false) String docAuthor,
             Model model
     )  {
-        GFDDoc gfdObj = new GFDDoc();
+        GFDDoc gfdObj = service.findById(id);
+
+        //System.err.println("Дернули из БД: " + gfdObj.getId());
+        //if(service.findByNameDoc(docName)==null)gfdObj = new GFDDoc();else gfdObj = service.findByNameDoc(docName);
+       // gfdObj.setId(tmp.getId());
         gfdObj.setNameTO(rp);
         gfdObj.setNumDoc(docNumber);
+        System.err.println("docNumber : " + docNumber);
         gfdObj.setDateDoc(DataHandler.stringToDate(docDate));
         gfdObj.setNumList(Integer.parseInt(numList));
         gfdObj.setCoord(sysCoord);
         gfdObj.setNameDoc(docName);
         gfdObj.setAuthorDoc(docAuthor);
-
-        service.save(gfdObj);
+        //gfdObj.setId(tmp.getId());
+        service.update(gfdObj);
         tmp = gfdObj;
-        return "update";
+        return "redirect:/update";
     }
 
 }

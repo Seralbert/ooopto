@@ -3,7 +3,7 @@
 
 <div class="container">
 
-    <form class="findform" enctype="multipart/form-data" action="/addNew" method="post">
+    <form class="findform" action="/update" method="post">
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label style="color: azure">Наименование отдела</label>
@@ -86,7 +86,7 @@
                             <th scope="row">1</th>
                             <td>${doc.description}</td>
                             <td><span class="oi oi-dial"></span></td>
-                            <td><span class="oi oi-x"></span></td>
+                            <td><span class="oi oi-x">${doc.id}</span></td>
                         </tr>
                         <#else>
                         <tr><td>Нет образов</td></tr>
@@ -104,7 +104,9 @@
         <div class="form-row justify-content-md-end">
             <button type="submit" class="col-md-2 btn btn-primary pull-right"><span class="oi oi-check"></span>&nbsp Сохранить</button>
         </div>
-
+        <div class="form-row">
+            <input type="text" name="docID" value="${docID}">
+        </div>
     </form>
     <#include "parts/modal.ftl">
 </div>

@@ -8,4 +8,7 @@ import ys.project.model.GFDDoc;
  *  Репозиторий основных документов
  */
 public interface DocRepo extends JpaRepository<GFDDoc, Long> {
+    GFDDoc findGFDDocByNameDoc(String nameDoc);
+    GFDDoc findGFDDocById(Long id);
+
 }

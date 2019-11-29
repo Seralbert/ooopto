@@ -22,11 +22,28 @@ public class DocServiceImpl implements DocService {
 
 
     @Override
+    public GFDDoc findById(Long id) {
+        return repository.getOne(id);
+    }
+
+    @Override
+    public GFDDoc findByNameDoc(String name) {
+        return repository.findGFDDocByNameDoc(name);
+    }
+
+    @Override
     public void save(GFDDoc o) {
         repository.save(o);
     }
     @Override
     public List<GFDDoc> findAll() {
         return repository.findAll();
+    }
+
+    @Override
+    public void update(GFDDoc o){
+        GFDDoc updated = findById(o.getId());
+        System.out.println("ID в сервисе" + o.getId());
+        repository.save(updated);
     }
 }
