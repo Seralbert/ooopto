@@ -7,8 +7,9 @@
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label style="color: azure">Наименование отдела</label>
-                <select id="rp" class="form-control">
-                    <option selected>Великий Новгород</option>
+                <select id="rp" name="rp" class="form-control">
+                    <option selected>---Выберете отдел---</option>
+                    <option>Великий Новгород</option>
                     <option>Батецкий межмуниципальный отдел</option>
                     <option>Боровический межмуниципальный отдел</option>
                     <option>Валдайский межмуниципальный отдел</option>
@@ -29,23 +30,23 @@
         <div class="form-row">
             <div class="form-group col-md-4">
                 <label class="label-form">Номер документа</label>
-                <input type="text" class="form-control" id="docNumber" placeholder="Номер документа">
+                <input type="text" class="form-control" id="docNumber" name="docNumber" placeholder="Номер документа">
             </div>
             <div class="form-group col-md-4">
                 <label class="label-form">Дата документа</label>
-                <input type="date" class="form-control" id="docDate" placeholder="01.01.2000">
+                <input type="date" class="form-control" id="docDateB" name="docDateStart">
             </div>
             <div class="form-group col-md-4">
                 <label class="label-form">&nbsp;</label>
-                <input type="date" class="form-control" id="docDate" placeholder="01.01.2000">
+                <input type="date" class="form-control" id="docDateE" name="docDateStop">
             </div>
 
 
             <div class="form-group col-md-2">
                 <label class="label-form">Система координат</label>
-                <select id="sysCoord" class="form-control">
+                <select id="sysCoord" name="sysCoord" class="form-control">
                     <option selected>МСК-22</option>
-                    <option>...</option>
+                    <option>МСК-53</option>
                 </select>
             </div>
 
@@ -53,14 +54,14 @@
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label class="label-form">Название документа содержит</label>
-                <input type="text" class="form-control" id="docName">
+                <input type="text" class="form-control" id="docName" name="docName">
             </div>
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label class="label-form">Разработчик документа</label>
-                <input type="text" class="form-control" id="docAuthor">
+                <input type="text" class="form-control" id="docAuthor" name="docAuthor">
             </div>
         </div>
 

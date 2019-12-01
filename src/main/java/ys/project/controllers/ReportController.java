@@ -31,7 +31,8 @@ public class ReportController {
 
     @RequestMapping("/report")
     public String report(Model model){
-        model.addAttribute("docs", service.findAll());
+        //model.addAttribute("docs", service.findByPattern("3"));
+
         return "report";
     }
 

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import ys.project.model.GFDDoc;
 import ys.project.repository.DocRepo;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -29,6 +30,28 @@ public class DocServiceImpl implements DocService {
     @Override
     public GFDDoc findByNameDoc(String name) {
         return repository.findGFDDocByNameDoc(name);
+    }
+
+    @Override
+    public List<GFDDoc> findGFDDocByNameDocContains(String name) {
+        return repository.findGFDDocByNameDocContains(name);
+    }
+
+    @Override
+    public List<GFDDoc> findByFild(String numDoc, String nameDoc, String authorDoc, String nameRP, Date startDate, Date endDate) {
+        return repository.findGFDDocByNumDocContainsAndNameDocContainsAndAuthorDocContainsAndNameTOContainsAndDateDocAfterAndDateDocBefore(numDoc,nameDoc,authorDoc,nameRP, startDate, endDate);
+    }
+
+    @Override
+    public List<GFDDoc> findByFild(String numDoc, String nameDoc, String authorDoc, String nameRP) {
+        return repository.findGFDDocByNumDocContainsAndNameDocContainsAndAuthorDocContainsAndNameTOContains(numDoc,nameDoc,authorDoc,nameRP);
+    }
+
+    @Override
+    public List<GFDDoc> findByPattern(String nameDoc, String numDoc, Date docDateStart, Date docDateStop, String authorDoc, String nameTO) {
+        //String nameDoc, String numDoc, Date docDateStart, Date docDateStop, String authorDoc, String nameTO
+        System.err.println(docDateStart + " " + docDateStop);
+        return repository.findByPattern(nameDoc, numDoc, docDateStart, docDateStop, authorDoc, nameTO);
     }
 
     @Override
