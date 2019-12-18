@@ -16,7 +16,7 @@
 
     <link rel="stylesheet" href="/css/open-iconic-bootstrap.min.css"/>
 </head>
-<body>
+<body style="background-image: url(/imgres/${bgImg})!important;">
 
 
 

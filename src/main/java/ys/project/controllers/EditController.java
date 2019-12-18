@@ -4,15 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import ys.project.model.AppendDoc;
 import ys.project.model.GFDDoc;
 import ys.project.services.AppendDocService;
 import ys.project.services.DocService;
+import ys.project.utils.BgHandler;
 import ys.project.utils.DataHandler;
 
 import java.io.File;
@@ -45,7 +43,7 @@ public class EditController {
 
     @RequestMapping("/new")
     public String newDoc(Model model){
-
+        model.addAttribute("bgImg", BgHandler.getBG());
 
         return "new";
     }
@@ -88,7 +86,7 @@ public class EditController {
                           @RequestParam(value = "file") MultipartFile file
                           ) throws IOException
     {
-        System.out.println("YYEP");
+        //System.out.println("YYEP");
         if(file!=null && !file.getOriginalFilename().isEmpty()) {
             String uuidFile = UUID.randomUUID().toString();
 
@@ -120,14 +118,14 @@ public class EditController {
     @GetMapping("/update")
     public String upd(Model model
         ){
-        //System.out.println(tmp.getId());
+        model.addAttribute("bgImg", BgHandler.getBG());
+        System.err.println("ПРИШЛИ" + tmp.getId());
         model.addAttribute("listAppendDoc", appendService.findByParentId(tmp.getId()));
-        System.err.println("tmp.err! : " + tmp.getId());
+        //System.err.println("tmp.err! : " + tmp.getId());
         model.addAttribute("docAuthor",tmp.getAuthorDoc());
         model.addAttribute("docName",tmp.getNameDoc());
         model.addAttribute("docDate",DataHandler.dateToString(tmp.getDateDoc()));
         model.addAttribute("docID", tmp.getId());
-        //model.addAttribute("docDate",tmp.getDateDoc());
         model.addAttribute("numList",tmp.getNumList());
         model.addAttribute("docNumber",tmp.getNumDoc());
         System.err.println("docNumber" + tmp.getNumDoc());
@@ -161,6 +159,13 @@ public class EditController {
         //gfdObj.setId(tmp.getId());
         service.update(gfdObj);
         tmp = gfdObj;
+        return "redirect:/update";
+    }
+
+    @GetMapping("/edit/{id}")
+    public String editDocument(@PathVariable Long id, Model model){
+        tmp = service.findById(id);
+        System.out.println(tmp.getNumDoc());
         return "redirect:/update";
     }
 

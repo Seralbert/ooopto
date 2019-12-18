@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import ys.project.services.DocService;
+import ys.project.utils.BgHandler;
 import ys.project.utils.CreatePDF;
 
 import java.io.ByteArrayInputStream;
@@ -31,8 +32,8 @@ public class ReportController {
 
     @RequestMapping("/report")
     public String report(Model model){
-        //model.addAttribute("docs", service.findByPattern("3"));
-
+        model.addAttribute("docs", service.findAll());
+        model.addAttribute("bgImg", BgHandler.getBG());
         return "report";
     }
 

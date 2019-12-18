@@ -50,7 +50,7 @@ public class DocServiceImpl implements DocService {
     @Override
     public List<GFDDoc> findByPattern(String nameDoc, String numDoc, Date docDateStart, Date docDateStop, String authorDoc, String nameTO) {
         //String nameDoc, String numDoc, Date docDateStart, Date docDateStop, String authorDoc, String nameTO
-        System.err.println(docDateStart + " " + docDateStop);
+        //System.err.println(docDateStart + " " + docDateStop);
         return repository.findByPattern(nameDoc, numDoc, docDateStart, docDateStop, authorDoc, nameTO);
     }
 

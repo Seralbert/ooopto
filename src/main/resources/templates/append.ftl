@@ -17,6 +17,7 @@
 </head>
 <body>
     <div class="form-row justify-content-md-end">
+        <a class="btn-link" href="/gogogog">SAVE</a>
         <button type="button" data-toggle="modal" data-target="#modalFrame" class="col-md-2 btn btn-success btn-block"><span class="oi oi-plus">&nbsp Добавить</span></button>
     </div>
 

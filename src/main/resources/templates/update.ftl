@@ -105,7 +105,7 @@
             <button type="submit" class="col-md-2 btn btn-primary pull-right"><span class="oi oi-check"></span>&nbsp Сохранить</button>
         </div>
         <div class="form-row">
-            <input type="text" name="docID" value="${docID}">
+            <input type="hidden" name="docID" value="${docID}">
         </div>
     </form>
     <#include "parts/modal.ftl">

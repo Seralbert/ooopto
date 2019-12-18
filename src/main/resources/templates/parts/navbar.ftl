@@ -28,7 +28,10 @@
         </ul>
         <ul class="navbar-nav justify-content-end">
             <li>
-                <span class="oi oi-bolt"></span>
+                <a class="nav-link" href="/import" <span class="oi oi-data-transfer-download">&nbsp;Импорт&nbsp;&nbsp;</span></a>
+            </li>
+            <li>
+                <a href="#" class="nav-link"> <span class="oi oi-bolt"></span></a>
             </li>
         </ul>
 

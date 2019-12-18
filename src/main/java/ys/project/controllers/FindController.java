@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import ys.project.model.GFDDoc;
 import ys.project.services.DocService;
+import ys.project.utils.BgHandler;
 import ys.project.utils.DataHandler;
 
 import java.util.ArrayList;
@@ -30,6 +31,8 @@ public class FindController {
 
     @RequestMapping("/find")
     public String find(Model model) {
+
+        model.addAttribute("bgImg", BgHandler.getBG());
         return "find";
     }
 
@@ -59,8 +62,8 @@ public class FindController {
 
     @GetMapping("/result")
     public String getResult(Model model) {
+        model.addAttribute("bgImg", BgHandler.getBG());
         model.addAttribute("docs", resList);
-
         return "result";
     }
 
