@@ -1,4 +1,4 @@
-<#import "parts/common.ftl" as c>
+<#import "parts/common_joke.ftl" as c>
 <@c.page>
 <div class="container">
 

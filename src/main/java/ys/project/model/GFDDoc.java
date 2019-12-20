@@ -16,13 +16,6 @@ import java.util.Date;
 @AllArgsConstructor
 @Table(name = "gfd_doc")
 public class GFDDoc {
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -42,6 +35,13 @@ public class GFDDoc {
     @Column(name = "authorDoc")
     private String authorDoc;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getNameTO() {
         return nameTO;
@@ -51,9 +51,7 @@ public class GFDDoc {
         this.nameTO = nameTO;
     }
 
-    public String getNumDoc() {
-        return numDoc;
-    }
+    public String getNumDoc() { return numDoc; }
 
     public void setNumDoc(String numDoc) {
         this.numDoc = numDoc;
