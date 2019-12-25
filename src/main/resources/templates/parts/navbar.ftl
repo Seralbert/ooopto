@@ -22,7 +22,10 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link " href="/append">TEST</a>
+                <a class="nav-link " href="/test">TEST</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="/test2">TEST</a>
             </li>
 
         </ul>

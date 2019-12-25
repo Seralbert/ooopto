@@ -5,7 +5,7 @@ import java.util.Date;
 
 /**
  * Created by User on 18.12.2019.
- * Реализация записи инфвентарной книги в соответствии с регламетом
+ * Реализация записи инвентарной книги в соответствии с регламетом
  */
 @Entity
 @Table
@@ -16,53 +16,53 @@ public class BookRecord {
     /*
     * Обязательные поля
     * */
+    @Column
     // фондодержатель, организация субъекта Российской Федерации
-    @Column
     private String orgInfo;
+    @Column
     // тип документа, в соответссвии с классификатором
-    @Column
     private String docType;
+    @Column
     // наименование документа
-    @Column
     private String docName;
+    @Column
     // инвентарный номер документа
-    @Column
     private String docInvNumber;
-    // режимные ограничения
     @Column
+    // режимные ограничения
     private String docAccessType;
     /*
     * Информационные поля. При наличичи информации, обязательны для заполнения
     * */
+    @Column
     // кадастровый нормер, при инвентаризации является обязательным полем
-    @Column
     private String docKadastrNumber;
+    @Column
     // наименование объекта
-    @Column
     private String objName;
+    @Column
     // Год создания документа
-    @Column
     private Date docCreate;
+    @Column
     // масштаб картографической основы
-    @Column
     private String scale;
+    @Column
     // система координат картографической основы
-    @Column
     private String sysCoord;
+    @Column
     // количество носителей или страниц картографического или текстового документа
-    @Column
     private int pageCount;
+    @Column
     // площадь объекта
-    @Column
     private double objArea;
+    @Column
     // реквизиты автора документа
-    @Column
     private String docAuthor;
+    @Column
     // дата передачи документв в фонд
-    @Column
     private Date docTransfer;
-    // характеристика ценности
     @Column
+    // характеристика ценности
     private double objPrice;
 
     /*
@@ -72,8 +72,8 @@ public class BookRecord {
     private String commissionLeader;
     // члены экспертной комиссии
     // перечень и характеристика материалов
-    // примечания
     @Column
+    // примечания
     private String docComment;
 
     public BookRecord() {

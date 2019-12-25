@@ -15,12 +15,23 @@ label {
 .card-header{
     padding: 0 !important;
 }
+
+.label-slim{
+    padding: 0 !important;
+    color: azure;
+}
 .fixspace {
     padding: 0;
     margin: 0;
     background-color: #0074b5;
 }
+.form-slim {
+    margin-bottom: 0rem !important;
+}
 
+.btn-spaced {
+    margin-top: 1rem !important;
+}
 .findform {
 
     padding-left: 20px;
