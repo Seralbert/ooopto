@@ -3,8 +3,8 @@ package ys.project.model;
 import javax.persistence.*;
 
 /**
- * Created by User on 14.12.2019.
- *
+ * Created by Yuriy Smirnov on 14.12.2019.
+ * Сущность объекта образа документа в БД
  */
 @Entity
 @Table(name = "img_doc")

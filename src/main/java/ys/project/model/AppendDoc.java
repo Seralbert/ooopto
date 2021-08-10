@@ -1,14 +1,11 @@
 package ys.project.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import ys.project.model.etalon.BookRecord;
 
 import javax.persistence.*;
 
 /**
- * Created by User on 08.11.2019.
+ * Created by Yuriy Smirnov on 08.11.2019.
  * Реализация файл-объекта
  */
 @Entity
@@ -21,8 +18,19 @@ public class AppendDoc {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "filePath")
+    @Column(name = "file_path")
     private String filePath;
+
+    @Column(name="org_name")
+    private String orgName;
+
+    public String getOrgName() {
+        return orgName;
+    }
+
+    public void setOrgName(String orgName) {
+        this.orgName = orgName;
+    }
 
     public Long getParentId() {
         return parentId;
@@ -37,6 +45,18 @@ public class AppendDoc {
 
     @Column(name = "uuid")
     private String uuidFile;
+
+    public BookRecord getCurrent_record() {
+        return current_record;
+    }
+
+    public void setCurrent_record(BookRecord current_record) {
+        this.current_record = current_record;
+    }
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "bookRecord_id")
+    private BookRecord current_record;
 
     /*@Column(name ="unit")
     private String unit;
@@ -82,9 +102,5 @@ public class AppendDoc {
 
     public void setFilePath(String filePath) {
         this.filePath = filePath;
-    }
-
-    public void setParentId(GFDDoc parentId) {
-        this.parentId = parentId.getId();
     }
 }

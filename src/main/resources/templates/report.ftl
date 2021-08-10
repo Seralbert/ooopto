@@ -1,4 +1,4 @@
-<#import "parts/common_joke.ftl" as c>
+<#import "parts/common.ftl" as c>
 <@c.page>
 <div class="container">
     <table class="table table-sm table-dark" style="background-color: rgba(0,0,0, 0.75);">
@@ -17,7 +17,7 @@
             <#list docs as doc>
             <tr>
                 <td>
-                ${doc.id}
+                #{doc.id}
                 </td>
                 <td>
                 ${doc.numDoc}

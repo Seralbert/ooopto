@@ -6,7 +6,7 @@ import ys.project.model.GFDvoc;
 
 /**
  * Created by User on 25.12.2019.
- *
+ * Репозиторий классификатора типов документов
  */
 @Repository
 public interface GFDVocRepo extends JpaRepository<GFDvoc, Integer>{

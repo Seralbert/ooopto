@@ -5,7 +5,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    color: #fff !important;
+    color: #fff!important;
 }
 
 label {
@@ -41,3 +41,33 @@ label {
     background-color: rgba(0,0,0, 0.75);
 }
 
+.red{
+    color: red;
+}
+.green{
+    color:green!important;
+}
+.blue{
+    color:blue;
+}
+
+.pagination li a.page-link{
+    background: #4e555b;
+    border: 2px solid #4e555b;
+    color: #9fcdff;
+}
+.phead li a.page-link{
+    background: #4e555b!important;
+    border: 0px solid #4e555b!important;
+    /*color: #9fcdff!important;
+*/
+    color: #9fcdff!important;
+    background-color: #4e555b!important;
+
+}
+
+.page-item.disabled .page-link {
+    color: #9fcdff!important;
+    background-color: #4e555b!important;
+    border-color: #4e555b!important;
+}

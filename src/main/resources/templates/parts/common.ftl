@@ -21,6 +21,7 @@
 
 
 <div class="container">
+    <#include "security.ftl">
     <#include "navbar.ftl">
     <br>
 

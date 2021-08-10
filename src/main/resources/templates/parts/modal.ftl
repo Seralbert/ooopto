@@ -2,7 +2,7 @@
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-            <form id="modalFrame" action="doAddDoc" method="post" enctype="multipart/form-data">
+            <form id="modalFrame" action="/editRecord/#{id}/doAddDoc" method="post" enctype="multipart/form-data">
             <div class="modal-header">
                 <h5 class="modal-title" id="ModalTitle" style="color: #1b1e21;">Добавить образ</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -13,14 +13,14 @@
             <div class="modal-body">
 
                     <div class="form-group">
-                        <label for="firstInputLineModalWindow">Example label</label>
+                        <label for="firstInputLineModalWindow">Описание образа</label>
                         <input type="text" class="form-control" id="firstInputLineModalWindow"
                                placeholder="Описание образа" name="fileDescription">
                     </div>
                     <div class="form-group">
-                        <label for="secondInputLineModalWindow">Another label</label>
+                        <label for="secondInputLineModalWindow">Имя файла</label>
                         <input type="file" class="form-control" id="secondInputLineModalWindow"
-                               placeholder="Another input" name="file">
+                               placeholder="Имя файла" name="file">
                     </div>
 
             </div>

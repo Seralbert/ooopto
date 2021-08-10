@@ -8,8 +8,9 @@ import ys.project.repository.ImgRepo;
 import java.util.List;
 
 /**
- * Created by User on 14.12.2019.
- *
+ * Created by Yuriy Smirnov on 14.12.2019.
+ * Реализация сервиса работы с образами документов, хранящимися в БД
+ * В настоящее время не используется
  */
 @Service
 public class ImageServiceImpl implements ImgService{

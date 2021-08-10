@@ -3,7 +3,7 @@ package ys.project.model;
 import javax.persistence.*;
 
 /**
- * Created by User on 25.12.2019.
+ * Created by Yuriy Smirnov on 25.12.2019.
  * Классификатор
  */
 @Entity

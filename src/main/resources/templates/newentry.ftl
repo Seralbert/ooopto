@@ -3,24 +3,32 @@
 
 <div class="container">
 
-    <form class="findform" enctype="multipart/form-data" action="/addNew" method="post">
+    <form class="findform" enctype="multipart/form-data" action="/addNewRecord" method="post">
         <div class="form-row">
             <div class="form-group col-md-12 form-slim">
                 <label style="color: azure" class="label-form col-form-label-sm">Фондодержатель, организация субъекта Российской Федерации</label>
                 <select id="orgInfo" name="orgInfo" class="form-control form-control-sm">
                     <option selected>Великий Новгород</option>
-                    <option>Батецкий межмуниципальный отдел</option>
-                    <option>Боровический межмуниципальный отдел</option>
-                    <option>Валдайский межмуниципальный отдел</option>
-                    <option>Демянский межмуниципальный отдел</option>
-                    <option>Крестецкий межмуниципальный отдел</option>
-                    <option>Маловишерский межмуниципальный отдел</option>
-                    <option>Окуловский межмуниципальный отдел</option>
-                    <option>Парфинский межмуниципальный отдел</option>
-                    <option>Солецкий межмуниципальный отдел</option>
-                    <option>Старорусский межмуниципальный отдел</option>
-                    <option>Холмский межмуниципальный отдел</option>
-                    <option>Новгородский межмуниципальный отдел</option>
+                    <option>Новгородский район</option>
+                    <option>Батецкий район</option>
+                    <option>Боровический район</option>
+                    <option>Валдайский район</option>
+                    <option>Волотовский район</option>
+                    <option>Демянский район</option>
+                    <option>Крестецкий район</option>
+                    <option>Любытинский район</option>
+                    <option>Маловишерский район</option>
+                    <option>Маревский район</option>
+                    <option>Мошенской район</option>
+                    <option>Окуловский район</option>
+                    <option>Парфинский район</option>
+                    <option>Пестовский район</option>
+                    <option>Поддорский район</option>
+                    <option>Солецкий район</option>
+                    <option>Старорусский район</option>
+                    <option>Хвойнинский район</option>
+                    <option>Холмский район</option>
+                    <option>Чудовский район</option>
                 </select>
             </div>
         </div>
@@ -30,13 +38,10 @@
             <div class="form-group col-md-2 form-slim">
                 <label class="label-form col-form-label-sm label-slim">Тип документа</label>
                 <select id="docType" name="docType" class="form-control form-control-sm">
-                    <option selected>1.1.1.1</option>
-                    <option>1.1.1.2</option>
-                    <option>1.1.1.3</option>
-                    <option>1.1.1.4</option>
-                    <option>1.1.1.5</option>
-                    <option>1.1.1.6</option>
-                    <option>1.1.1.7</option>
+                    <!--option>Debug</option-->
+                    <#list voc as item>
+                        <option>${item}</option>
+                    </#list>
                 </select>
             </div>
 
@@ -50,8 +55,8 @@
             </div>
 
             <div class="form-group col-md-2 form-slim">
-                <label class="label-form col-form-label-sm label-slim">Дата документа</label>
-                <input type="date" class="form-control form-control-sm " id="docCreate" name="docCreate">
+                <label class="label-form col-form-label-sm label-slim">Год создания документа</label>
+                <input type="text" class="form-control form-control-sm " id="docCreate" name="docCreate" value="0">
             </div>
 
             <div class="form-group col-md-2 form-slim">
@@ -68,7 +73,7 @@
             </div>
             <div class="form-group col-md-2 form-slim">
                 <label class="label-form col-form-label-sm label-slim">Количество листов</label>
-                <input type="text" class="form-control form-control-sm" id="pageCount" name="pageCount" placeholder="1" value="1">
+                <input type="text" class="form-control form-control-sm" id="pageCount" name="pageCount" placeholder="0" value="0">
             </div>
             <div class="form-group col-md-2 form-slim">
                 <label class="label-form col-form-label-sm label-slim">Система координат</label>
@@ -111,7 +116,11 @@
 
             <div class="form-group col-md-3 form-slim">
                 <label class="label-form col-form-label-sm label-slim">Ценность</label>
-                <input type="text" class="form-control form-control-sm" id="objPrice" name="objPrice">
+                <select id="objPrice" name="objPrice" class="form-control form-control-sm">
+                    <option selected>Типовой</option>
+                    <option>Ценный</option>
+                    <option>Особо ценный</option>
+                </select>
             </div>
         </div>
 
@@ -122,12 +131,39 @@
             </div>
         </div>
 
+
+
+        <div class="form-row">
+            <div class="form-group col-md-4 form-slim">
+                <label class="label-form col-form-label-sm label-slim">Комментарий</label>
+
+                <input type="text" class="form-control form-control-sm">
+            </div>
+
+            <div class="form-group col-md-4 form-slim">
+                <label class="label-form col-form-label-sm label-slim">Предыдущее место</label>
+
+                <input type="text" class="form-control form-control-sm">
+            </div>
+
+            <div class="form-group col-md-4 form-slim">
+                <label class="label-form col-form-label-sm label-slim">Сотрудник фонда</label>
+
+                <input type="text" class="form-control form-control-sm">
+            </div>
+        </div>
+
+
+
         <div class="form-row justify-content-md-end btn-spaced">
 
-            <button type="submit" class="col-md-2 btn btn-primary pull-right"><span class="oi oi-magnifying-glass"></span>&nbsp Поиск</button>
+            <button type="submit" class="col-md-2 btn btn-primary pull-right"><span class="oi oi-check"></span>&nbsp
+                Создать
+            </button>
         </div>
 
     </form>
+
 </div>
 
 </@c.page>

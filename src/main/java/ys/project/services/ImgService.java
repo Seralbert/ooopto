@@ -5,8 +5,9 @@ import ys.project.model.ImageDoc;
 import java.util.List;
 
 /**
- * Created by User on 14.12.2019.
- *
+ * Created by Yuriy Smirnov on 14.12.2019.
+ * сервис работы с образом докуента, хранящимся в БД
+ * в настоящее время не используется
  */
 public interface ImgService {
     List<ImageDoc> findAll();

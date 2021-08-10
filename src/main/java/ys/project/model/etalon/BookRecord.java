@@ -1,102 +1,122 @@
 package ys.project.model.etalon;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+import ys.project.model.AppendDoc;
+
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 /**
- * Created by User on 18.12.2019.
+ * Created by Yuriy Smirnov on 18.12.2019.
  * Реализация записи инвентарной книги в соответствии с регламетом
  */
 @Entity
-@Table
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "book_record")
 public class BookRecord {
-    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
     private Long id;
     /*
     * Обязательные поля
     * */
-    @Column
+    @Column(name = "org_info")
     // фондодержатель, организация субъекта Российской Федерации
     private String orgInfo;
-    @Column
+    @Column(name="doc_type")
     // тип документа, в соответссвии с классификатором
     private String docType;
-    @Column
+    @Column(name = "doc_name", length = 2048)
     // наименование документа
     private String docName;
-    @Column
+    @Column(name="doc_inv_number")
     // инвентарный номер документа
     private String docInvNumber;
-    @Column
+    @Column(name="doc_access_type")
     // режимные ограничения
     private String docAccessType;
     /*
     * Информационные поля. При наличичи информации, обязательны для заполнения
     * */
-    @Column
+    @Column(name="doc_kadastr_number", length = 600)
     // кадастровый нормер, при инвентаризации является обязательным полем
     private String docKadastrNumber;
-    @Column
+    @Column(name = "obj_name")
     // наименование объекта
     private String objName;
-    @Column
+    @Column(name="doc_create")
     // Год создания документа
-    private Date docCreate;
-    @Column
+    private int docCreate = 0;
+    @Column(name = "scale")
     // масштаб картографической основы
     private String scale;
-    @Column
+    @Column(name="sys_coord")
     // система координат картографической основы
     private String sysCoord;
-    @Column
+    @Column(name = "page_count")
     // количество носителей или страниц картографического или текстового документа
     private int pageCount;
-    @Column
+    @Column(name = "obj_area")
     // площадь объекта
     private double objArea;
-    @Column
+    @Column(name = "doc_author", length = 600)
     // реквизиты автора документа
     private String docAuthor;
-    @Column
+    @Column(name = "doc_transfer")
     // дата передачи документв в фонд
     private Date docTransfer;
-    @Column
+    @Column(name = "obj_price")
     // характеристика ценности
-    private double objPrice;
+    private String objPrice;
 
     /*
     * Дополнительные поля. Не обязательные
     * */
     // председатель экспертной комиссии
-    private String commissionLeader;
+    //private String commissionLeader;
     // члены экспертной комиссии
     // перечень и характеристика материалов
-    @Column
+    @Column(name = "doc_comment", length = 600)
     // примечания
     private String docComment;
 
-    public BookRecord() {
+    @Column(name= "doc_place")
+    private String docPlace;
+
+    @Column(name = "fond_empl")
+    private String fondEmpl;
+
+    public String getDocPlace() {
+        return docPlace;
     }
 
-    public BookRecord(String orgInfo, String docType, String docName, String docInvNumber, String docAccessType, String docKadastrNumber, String objName, Date docCreate, String scale, String sysCoord, int pageCount, double objArea, String docAuthor, Date docTransfer, double objPrice, String commissionLeader, String docComment) {
-        this.orgInfo = orgInfo;
-        this.docType = docType;
-        this.docName = docName;
-        this.docInvNumber = docInvNumber;
-        this.docAccessType = docAccessType;
-        this.docKadastrNumber = docKadastrNumber;
-        this.objName = objName;
-        this.docCreate = docCreate;
-        this.scale = scale;
-        this.sysCoord = sysCoord;
-        this.pageCount = pageCount;
-        this.objArea = objArea;
-        this.docAuthor = docAuthor;
-        this.docTransfer = docTransfer;
-        this.objPrice = objPrice;
-        this.commissionLeader = commissionLeader;
-        this.docComment = docComment;
+    public void setDocPlace(String docPlace) {
+        this.docPlace = docPlace;
+    }
+
+    public String getFondEmpl() {
+        return fondEmpl;
+    }
+
+    public void setFondEmpl(String fondEmpl) {
+        this.fondEmpl = fondEmpl;
+    }
+
+    @OneToMany(mappedBy = "current_record", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private List<AppendDoc> listDoc;
+
+    public List<AppendDoc> getListDoc() {
+        return listDoc;
+    }
+
+    public void setListDoc(List<AppendDoc> listDoc) {
+        this.listDoc = listDoc;
     }
 
     public Long getId() {
@@ -163,11 +183,11 @@ public class BookRecord {
         this.objName = objName;
     }
 
-    public Date getDocCreate() {
+    public int getDocCreate() {
         return docCreate;
     }
 
-    public void setDocCreate(Date docCreate) {
+    public void setDocCreate(int docCreate) {
         this.docCreate = docCreate;
     }
 
@@ -219,20 +239,12 @@ public class BookRecord {
         this.docTransfer = docTransfer;
     }
 
-    public double getObjPrice() {
+    public String getObjPrice() {
         return objPrice;
     }
 
-    public void setObjPrice(double objPrice) {
+    public void setObjPrice(String objPrice) {
         this.objPrice = objPrice;
-    }
-
-    public String getCommissionLeader() {
-        return commissionLeader;
-    }
-
-    public void setCommissionLeader(String commissionLeader) {
-        this.commissionLeader = commissionLeader;
     }
 
     public String getDocComment() {
